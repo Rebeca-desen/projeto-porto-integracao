@@ -55,8 +55,6 @@ console.log(req.body)
       
       res.status(201).send(cliente.toJSON())
   })
-  res.status(201).send({"status": true,
-  "mensagem": "Cliente incluido com sucesso"})
 }
 
 module.exports = {
