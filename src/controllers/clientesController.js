@@ -45,7 +45,7 @@ const getByCpf = (req, res) => {
 }
 
 const postCliente = (req, res) => {
-
+console.log(req.body)
   let cliente = new clientes(req.body)
 
   cliente.save(function (err) {
@@ -55,6 +55,8 @@ const postCliente = (req, res) => {
       
       res.status(201).send(cliente.toJSON())
   })
+  res.status(201).send({"status": true,
+  "mensagem": "Cliente incluido com sucesso"})
 }
 
 module.exports = {
