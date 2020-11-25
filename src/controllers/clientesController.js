@@ -17,15 +17,8 @@ const getCompradores = (req, res) => {
     if (err) {
       res.status(500).send({ message: err.message })
     } else {
-     // const clientesFiltados = clientes.map(cliente => {
-        //return {
           res.status(200).send(clientes)
-         // nome: cliente.nome,
-         // email: cliente.email
-      //  }
-     // })
-
-      res.status(200).send(clientesFiltados);
+    
     }
   })
 
@@ -52,8 +45,11 @@ console.log(req.body)
     if (err) {
       res.status(500).send({ message: err.message })
     }
-      
-      res.status(201).send(cliente.toJSON())
+  
+    res.status(201).send({
+      "status": true,
+      "mensagem": "Cliente incluido com sucesso"
+  })
   })
 }
 
