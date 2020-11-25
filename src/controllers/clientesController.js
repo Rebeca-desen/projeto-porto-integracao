@@ -1,5 +1,6 @@
 const clientes = require('../models/clientes')
 
+
 const getAll = (req, res) => {
   clientes.find(function (err, clientes) {
     if (err) {
@@ -20,9 +21,19 @@ const getCompradores = (req, res) => {
           res.status(200).send(clientes)
     
     }
-  })
+  }
+  )
+}
+const getComprador = (req, res) => {
+  let nome = req.params.nome
 
- 
+  clientes.find({nome, comprou: true},function (err, clientes) {
+    if (err) {
+      res.status(500).send({ message: err.message })
+    } else {
+      res.status(200).send(clientes);
+    }
+  } )
 }
 
 const getByCpf = (req, res) => {
@@ -56,6 +67,7 @@ console.log(req.body)
 module.exports = {
   getAll,
   getCompradores,
+  getComprador,
   getByCpf,
   postCliente
 }
