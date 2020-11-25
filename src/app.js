@@ -5,7 +5,7 @@ const mongoose = require("mongoose")
 const app = express()
 
 //String de conexão
-mongoose.connect("mongodb+srv://reprograma:reprogr@m@@cluster0.pgwdf.mongodb.net/clientes?retryWrites=true&w=majority", { 
+mongoose.connect("mongodb://localhost:27017/streaming", { 
   useNewUrlParser: true, 
   useUnifiedTopology: true 
 });

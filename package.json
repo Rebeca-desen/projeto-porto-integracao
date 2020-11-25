@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/mariliamessias/projeto-porto-integracao#readme",
   "dependencies": {
+    "body": "^5.1.0",
     "express": "^4.17.1",
-    "mongoose": "^5.10.13"
+    "mongoose": "^5.10.15",
+    "parser": "^0.1.4"
   }
 }
